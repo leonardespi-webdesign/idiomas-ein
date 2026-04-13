@@ -1,0 +1,88 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import siteData from '../content/site.yml';
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  author: string;
+  imageUrl: string;
+  imageAlt: string;
+  tags: string[];
+}
+
+const { title, description, pubDate, author, imageUrl, imageAlt, tags } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('es-MX', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={`${title} | ${siteData.escuela.nombre}`} description={description} imageUrl={imageUrl}>
+  <article>
+    <!-- Hero image -->
+    <div class="relative w-full h-64 md:h-96 overflow-hidden">
+      <img
+        src={imageUrl}
+        alt={imageAlt}
+        class="w-full h-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container-base py-16 md:py-24">
+      <div class="max-w-2xl mx-auto">
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mb-6">
+          {tags.map(tag => (
+            <span class="bg-secondary text-primary text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <!-- Title -->
+        <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
+          {title}
+        </h1>
+
+        <!-- Meta -->
+        <div class="flex items-center gap-4 text-sm text-gray-500 mb-12 border-b border-gray-200 pb-8">
+          <span>Por <strong class="text-neutral-900">{author}</strong></span>
+          <span>·</span>
+          <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+        </div>
+
+        <!-- Body content -->
+        <div class="prose prose-lg max-w-none
+          prose-headings:font-heading prose-headings:text-neutral-900
+          prose-h2:text-2xl prose-h2:mt-16 prose-h2:mb-6
+          prose-h3:text-xl prose-h3:mt-10 prose-h3:mb-4
+          prose-p:text-gray-700 prose-p:leading-loose prose-p:mb-6
+          prose-a:text-primary prose-a:no-underline hover:prose-a:text-accent
+          prose-strong:text-neutral-900
+          prose-hr:border-gray-200 prose-hr:my-12
+          prose-ul:text-gray-700 prose-ul:my-6
+          prose-ol:text-gray-700 prose-ol:my-6
+          prose-li:my-3 prose-li:leading-relaxed">
+          <slot />
+        </div>
+
+        <!-- Back link -->
+        <div class="mt-20 pt-8 border-t border-gray-200">
+          <a href={url("/blog")} class="text-primary font-semibold hover:text-accent transition-colors flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+            {siteData.nav.links.find((l: any) => l.href === '/blog')?.label ?? 'Blog'}
+          </a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

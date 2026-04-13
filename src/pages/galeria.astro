@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import siteData from '../content/site.yml';
+
+const { galeria, escuela, ctas } = siteData;
+---
+
+<BaseLayout
+  title={`${galeria.titulo} | ${escuela.nombre}`}
+  description={galeria.subtitulo}
+>
+  <!-- ── HEADER ── -->
+  <section class="bg-primary text-white py-16 md:py-24">
+    <div class="container-base max-w-3xl text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">
+        {galeria.titulo}
+      </h1>
+      <p class="text-blue-100 text-lg">{galeria.subtitulo}</p>
+    </div>
+  </section>
+
+  <!-- ── GALERÍA ── -->
+  <section class="section-padding bg-white">
+    <div class="container-base">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {galeria.imagenes.map((img: any) => (
+          <div class="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 aspect-video">
+            <img
+              src={img.url}
+              alt={img.alt}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-end">
+              <p class="text-white text-sm font-medium p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                {img.alt}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <CtaBanner
+    titulo={ctas.inscripcion.texto}
+    subtitulo="Sé parte de esta comunidad."
+    ctaTexto="Únete a la comunidad"
+    ctaHref={url("/contacto")}}
+    whatsappMensaje={ctas.inscripcion.whatsapp_mensaje}
+  />
+</BaseLayout>

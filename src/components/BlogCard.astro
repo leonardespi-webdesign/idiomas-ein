@@ -1,0 +1,66 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  pubDate: Date;
+  imageUrl: string;
+  imageAlt: string;
+  tags: string[];
+  author: string;
+}
+
+const { slug, title, description, pubDate, imageUrl, imageAlt, tags, author } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('es-MX', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<a
+  href={`/blog/${slug}`}
+  class="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100"
+>
+  <!-- Image -->
+  <div class="relative h-52 overflow-hidden">
+    <img
+      src={imageUrl}
+      alt={imageAlt}
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+    {tags.length > 0 && (
+      <div class="absolute bottom-3 left-3 flex gap-2 flex-wrap">
+        <span class="bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-full">
+          {tags[0]}
+        </span>
+      </div>
+    )}
+  </div>
+
+  <!-- Content -->
+  <div class="flex flex-col flex-1 p-5 md:p-6">
+    <p class="text-xs text-gray-400 mb-2 flex items-center gap-1.5">
+      <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+      <span>·</span>
+      <span>{author}</span>
+    </p>
+
+    <h3 class="font-heading font-bold text-lg md:text-xl text-neutral-900 mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
+      {title}
+    </h3>
+
+    <p class="text-gray-600 text-sm leading-relaxed flex-1 line-clamp-3 mb-4">
+      {description}
+    </p>
+
+    <span class="text-primary text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
+      Leer artículo
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+      </svg>
+    </span>
+  </div>
+</a>

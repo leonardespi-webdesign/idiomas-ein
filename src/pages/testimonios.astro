@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TestimonialCard from '../components/TestimonialCard.astro';
+import CtaBanner from '../components/CtaBanner.astro';
+import siteData from '../content/site.yml';
+
+const { testimonios, escuela, ctas } = siteData;
+---
+
+<BaseLayout
+  title={`Testimonios | ${escuela.nombre}`}
+  description="Lee lo que nuestras familias, alumnos y egresados dicen sobre su experiencia en la escuela."
+>
+  <!-- ── HEADER ── -->
+  <section class="bg-primary text-white py-16 md:py-24">
+    <div class="container-base max-w-3xl text-center">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4">
+        Lo que dicen nuestras familias
+      </h1>
+      <p class="text-blue-100 text-lg">
+        Más de {new Date().getFullYear() - escuela.fundacion} años de resultados reales. Estas son algunas de sus historias.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── GRID ── -->
+  <section class="section-padding bg-secondary">
+    <div class="container-base">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {testimonios.map((t: any) => (
+          <TestimonialCard
+            nombre={t.nombre}
+            rol={t.rol}
+            texto={t.texto}
+            imagen={t.imagen}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <CtaBanner
+    titulo={ctas.inscripcion.texto}
+    subtitulo="Sé el próximo testimonio de transformación."
+    ctaTexto="Empieza como ellos"
+    ctaHref={url("/cursos")}
+    whatsappMensaje={ctas.inscripcion.whatsapp_mensaje}
+  />
+</BaseLayout>

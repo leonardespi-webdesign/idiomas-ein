@@ -1,0 +1,57 @@
+---
+interface Props {
+  pregunta: string;
+  respuesta: string;
+  index: number;
+}
+
+const { pregunta, respuesta, index } = Astro.props;
+const id = `faq-${index}`;
+---
+
+<div class="border border-gray-200 rounded-xl overflow-hidden">
+  <button
+    type="button"
+    class="faq-trigger w-full flex justify-between items-start gap-4 p-5 md:p-6 text-left bg-white hover:bg-secondary transition-colors duration-150"
+    aria-expanded="false"
+    aria-controls={id}
+  >
+    <span class="font-heading font-semibold text-neutral-900 text-base md:text-lg leading-snug">
+      {pregunta}
+    </span>
+    <svg
+      class="faq-icon w-5 h-5 flex-shrink-0 text-primary mt-0.5 transition-transform duration-300"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </button>
+
+  <div
+    id={id}
+    class="faq-panel hidden overflow-hidden"
+  >
+    <div class="px-5 md:px-6 pb-5 md:pb-6 pt-1 border-t border-gray-100">
+      <p class="text-gray-700 leading-relaxed">
+        {respuesta}
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const panelId = btn.getAttribute('aria-controls')!;
+      const panel = document.getElementById(panelId);
+      const icon = btn.querySelector('.faq-icon');
+
+      btn.setAttribute('aria-expanded', String(!expanded));
+      panel?.classList.toggle('hidden', expanded);
+      icon?.classList.toggle('rotate-180', !expanded);
+    });
+  });
+</script>
