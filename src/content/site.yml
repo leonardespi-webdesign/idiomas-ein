@@ -313,7 +313,7 @@ aviso_privacidad:
   fecha_actualizacion: "Enero de 2025"
   intro: "En cumplimiento con lo dispuesto en la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), su Reglamento y los Lineamientos del Aviso de Privacidad, ponemos a su disposición el presente Aviso de Privacidad."
   responsable_titulo: "Responsable del tratamiento de datos personales"
-  responsable_texto: "<!-- TODO: reemplazar con nombre oficial --> [NOMBRE DE LA ESCUELA], con domicilio en Ciudad de México, México, es responsable del uso y protección de sus datos personales."
+  responsable_texto: "Colegio Manuela Cataño, con domicilio en Ciudad de México, México, es responsable del uso y protección de sus datos personales."
   datos_titulo: "Datos personales que recabamos"
   datos_items:
     - "Nombre completo"
