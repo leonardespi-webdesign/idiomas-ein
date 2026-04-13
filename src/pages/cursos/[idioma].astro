@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBanner from '../../components/CtaBanner.astro';
 import ContactForm from '../../components/ContactForm.astro';
 import siteData from '../../content/site.yml';
+import { url } from '../utils/url';
 
 export function getStaticPaths() {
   return siteData.idiomas.map((idioma: any) => ({
