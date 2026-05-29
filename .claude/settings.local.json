@@ -4,7 +4,12 @@
       "Bash(npm --version)",
       "Bash(npm create:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(env)",
+      "Bash(BASE_PATH=/IEIN npm run build)",
+      "Bash(gh auth *)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
