@@ -5,7 +5,7 @@
  * Usage:  url('/cursos')  →  '/IEIN/cursos'  (when base = '/IEIN/')
  *         url('/')        →  '/IEIN/'
  */
-const base = import.meta.env.BASE_URL; // always ends with "/"
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/'); // normalize trailing slash
 
 export function url(path: string): string {
   if (
