@@ -72,7 +72,7 @@ propuestas_valor:
     descripcion: "Dos semanas en Francia o Londres con supervisión, clases y excursiones incluidas."
   - icono: "👨‍👩‍👧"
     titulo: "Para todas las edades"
-    descripcion: "Cursos desde los 4 años hasta adultos, con grupos pequeños de máximo 10 alumnos."
+    descripcion: "Cursos desde los 6 años hasta adultos, con grupos pequeños de máximo 10 alumnos."
   - icono: "📅"
     titulo: "Ciclos de 6 meses"
     descripcion: "Formato accesible: 2 horas por semana, grupos pequeños y avance garantizado."
@@ -215,11 +215,11 @@ testimonios:
 
 faq:
   - pregunta: "¿Los cursos son en línea o presenciales?"
-    respuesta: "Todos nuestros cursos son presenciales en nuestras instalaciones en la Ciudad de México. El formato presencial garantiza la práctica conversacional que los alumnos necesitan para avanzar de verdad."
+    respuesta: "Todos nuestros cursos se imparten en línea en vivo a través de plataformas como Zoom y Meet. Este formato digital garantiza la práctica conversacional en tiempo real que los alumnos necesitan para avanzar de verdad, desde la comodidad de su casa."
   - pregunta: "¿Qué material se necesita para los cursos?"
-    respuesta: "El material necesario se indica al momento de la inscripción según el idioma y nivel. Generalmente incluye un libro de texto del nivel correspondiente, que puede adquirirse en la escuela o en cualquier librería."
+    respuesta: "¡No necesitas comprar nada extra! Todo el material de estudio te lo proporcionamos nosotros y el profesor a cargo. Para tomar las clases, solo vas a necesitar una computadora con cámara y micrófono, una buena conexión a internet y un cuaderno para tus notas."
   - pregunta: "¿Dónde se pagan los cursos?"
-    respuesta: "Los pagos se realizan directamente en nuestras instalaciones. Para más información sobre métodos de pago disponibles, contáctenos por WhatsApp o correo electrónico."
+    respuesta: "Los pagos se realizan de forma cómoda y segura mediante transferencia electrónica. Para solicitar los datos bancarios o conocer otros métodos de pago disponibles, contáctanos por WhatsApp o correo electrónico."
   - pregunta: "¿Los cursos tienen constancia oficial?"
     respuesta: "Sí. Al completar cada ciclo, los alumnos reciben una constancia de acreditación. Además, preparamos a los alumnos para obtener certificaciones internacionales Cambridge, Oxford y TOEFL."
   - pregunta: "¿Hay clases para adultos?"

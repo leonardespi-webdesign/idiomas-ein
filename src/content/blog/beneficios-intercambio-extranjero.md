@@ -8,7 +8,7 @@ imageAlt: "Jóvenes viajeros explorando una ciudad europea"
 tags: ["intercambio", "jóvenes", "Paris", "Londres", "experiencia"]
 ---
 
-Llevamos más de veinte años organizando programas de intercambio a París y Londres. Y en ese tiempo hemos visto algo que los estudios respaldan: dos semanas de inmersión cambian a los jóvenes de formas que ningún libro de texto puede lograr.
+Llevamos más de seis años organizando programas de intercambio a París y Londres. Y en ese tiempo hemos visto algo que los estudios respaldan: dos semanas de inmersión cambian a los jóvenes de formas que ningún libro de texto puede lograr.
 
 ## El idioma se vuelve real
 
