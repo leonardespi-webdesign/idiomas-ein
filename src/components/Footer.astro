@@ -33,8 +33,8 @@ const linksRight = nav.links.slice(half);
         <!-- Partner/accreditation icons -->
         <div class="flex items-center gap-3 flex-wrap">
           {['img1','img2','img3','img4','img5','img6'].map((name) => (
-            <div class="w-8 h-8 flex items-center justify-center flex-shrink-0">
-              <img src={url(`/icons/${name}.png`)} alt="" class="w-full h-full object-contain brightness-0 invert" loading="lazy" />
+            <div class="w-8 h-8 bg-white rounded p-1 flex items-center justify-center flex-shrink-0">
+              <img src={url(`/icons/${name}.png`)} alt="" class={`w-full h-full object-contain${name === 'img2' ? ' translate-x-[2px]' : ''}${name === 'img4' ? ' translate-x-[2px] scale-125' : ''}`} loading="lazy" />
             </div>
           ))}
         </div>
