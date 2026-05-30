@@ -9,7 +9,8 @@
       "Bash(BASE_PATH=/IEIN npm run build)",
       "Bash(gh auth *)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(file /home/lenny/git/myProjects/Work/idiomas-ein/img*.png)"
     ]
   }
 }
